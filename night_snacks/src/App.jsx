@@ -18,11 +18,11 @@ import Edit from "./pages/Edit"
 import NavBar from "./components/NavBar"
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { LoginWrapper } from './styles/loginElements';
+import { LoginWrapper } from './styles/loginElements'
 
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null)
   return (
     <LoginWrapper>
       <>
@@ -36,6 +36,16 @@ function App() {
             </div>
             <main>
               <Routes>
+                <Route path="/login" element={
+                    <PublicRoute
+                      element={Login}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
+                <Route path="/" element={<Navigate to="/login" />}></Route>
+                
                 <Route path="/" element={<Home />} />
                 <Route path="/snacks" element={<Index />} />
                 <Route path="/snacks/new" element={<New />} />
