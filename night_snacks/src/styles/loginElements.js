@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const LoginWrapper = styled.div`
   display: table;
@@ -10,7 +10,7 @@ export const LoginWrapper = styled.div`
   @media screen and (max-width: 480px) {
     background: linear-gradient(116.82deg, #FF71A2 0%, #FFC682 100%), #FFFFFF;
   }
-`;
+`
 
 export const LoginBackground = styled.form`
   position: absolute;
@@ -37,7 +37,7 @@ export const LoginBackground = styled.form`
     background: none;
     box-shadow: none;
   }
-`;
+`
 
 export const LoginBackground2 = styled.form`
 
@@ -65,7 +65,7 @@ export const LoginBackground2 = styled.form`
     background: none;
     box-shadow: none;
   }
-`;
+`
 
 export const LoginBackground3 = styled.div`
 
@@ -120,7 +120,7 @@ box-sizing: border-box;
   background: none;
   box-shadow: none;
 }
-`;
+`
 
 export const LoginLabel = styled.div`
   display: flex;
@@ -132,7 +132,7 @@ export const LoginLabel = styled.div`
     position: absolute;
     bottom: 190px;
   }
-`;
+`
 
 export const LoginHeader = styled.h2`
   width: 259px;
@@ -154,7 +154,7 @@ export const LoginHeader = styled.h2`
     color: #FFFFFF;
   }
 
-`;
+`
 
 export const LoginHeaderV3 = styled.h2`
   width: 259px;
@@ -175,7 +175,7 @@ export const LoginHeaderV3 = styled.h2`
     color: #FFFFFF;
   }
 
-`;
+`
 
 export const LoginHeaderV2 = styled.h4`
   width: 259px;
@@ -197,7 +197,7 @@ export const LoginHeaderV2 = styled.h4`
     color: #FFFFFF;
   }
 
-`;
+`
 
 export const LoginHeaderV4 = styled.h2`
   width: 259px;
@@ -218,7 +218,7 @@ export const LoginHeaderV4 = styled.h2`
     color: #FFFFFF;
   }
 
-`;
+`
 
 export const ErrorList = styled.ul`
   font-family: Roboto;
@@ -249,7 +249,7 @@ export const ErrorList = styled.ul`
     }
     
   }
-`;
+`
 
 export const FormInput = styled.input`
   width: 300px;
@@ -281,7 +281,7 @@ export const FormInput = styled.input`
       background: #FFFFFF;
     }
   }
-`;
+`
 
 export const LoginButton = styled.button`
   width: 300px;
@@ -300,7 +300,7 @@ export const LoginButton = styled.button`
   &:focus{
       outline: none;
   }
-`;
+`
 
 export const LoginButton2 = styled.button`
   width: 150px;
@@ -319,7 +319,7 @@ export const LoginButton2 = styled.button`
   &:focus{
       outline: none;
   }
-`;
+`
 
 export const LoginButton3 = styled.button`
   width: 125px;
@@ -338,7 +338,7 @@ export const LoginButton3 = styled.button`
   &:focus{
       outline: none;
   }
-`;
+`
 
 export const LoginButton4 = styled.button`
   width: 50px;
@@ -357,7 +357,7 @@ export const LoginButton4 = styled.button`
   &:focus{
       outline: none;
   }
-`;
+`
 
 export const LoginButton5 = styled.button`
   width: 125px;
@@ -376,7 +376,7 @@ export const LoginButton5 = styled.button`
   &:focus{
       outline: none;
   }
-`;
+`
 
 export const LoginButton6 = styled.button`
   width: 170px;
@@ -395,7 +395,7 @@ export const LoginButton6 = styled.button`
   &:focus{
       outline: none;
   }
-`;
+`
 
 export const LoginButton7 = styled.button`
   width: 330px;
@@ -414,4 +414,4 @@ export const LoginButton7 = styled.button`
   &:focus{
       outline: none;
   }
-`;
+`

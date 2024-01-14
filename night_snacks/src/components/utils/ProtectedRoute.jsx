@@ -1,8 +1,11 @@
 
-import { Navigate, Route } from 'react-router-dom';
+import {
+  Navigate,
+  Route
+} from 'react-router-dom'
 
 const ProtectedRoute = ({ element: Component, currentUser, setCurrentUser }) => {
-  return currentUser ? <Component currentUser={currentUser} setCurrentUser = {setCurrentUser}/> :<Navigate to="/" />;
-};
+  return currentUser ? <Component currentUser={currentUser} setCurrentUser={setCurrentUser} /> : <Navigate to="/" />
+}
 
-export default ProtectedRoute;
+export default ProtectedRoute

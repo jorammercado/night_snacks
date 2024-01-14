@@ -13,7 +13,7 @@ export default function FourOFour() {
             <LoginBackground4 >
                 <LoginLabel>
                     <LoginHeaderV4>
-                        <h1>Sorry, no page found</h1>  
+                        Sorry, no page found
                     </LoginHeaderV4>
                 </LoginLabel>
             </LoginBackground4>

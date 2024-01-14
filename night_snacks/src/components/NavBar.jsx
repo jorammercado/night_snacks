@@ -7,7 +7,7 @@ export default function NavBar() {
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
                 <div className="container-fluid">
                     <div>
-                        <Link to="/">Home </Link>
+                        <Link to="/home">Home </Link>
 
                         <Link to="/snacks"> Snacks </Link>
 

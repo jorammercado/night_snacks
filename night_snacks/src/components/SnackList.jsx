@@ -252,7 +252,6 @@ export default function SnackList() {
                         className="btn btn-secondary btn-sm"
                         onClick={() => paginate(currentPage - 1)}
                         disabled={currentPage === 1}
-                        variant="primary"
                     >
                         Previous
                     </LoginButton2>
@@ -263,7 +262,6 @@ export default function SnackList() {
                         className="btn btn-secondary "
                         onClick={() => paginate(currentPage + 1)}
                         disabled={indexOfLastSnack >= allSnacks.length}
-                        variant="primary"
                     >
                         Next
                     </LoginButton2>

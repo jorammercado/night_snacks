@@ -152,7 +152,7 @@ export default function SnackNewForm() {
                             checked={snack.is_favorite}
                         />
                     </Form.Group>
-                    <LoginButton7 className="btn btn-secondary btn-sm" variant="primary" type="submit">
+                    <LoginButton7 className="btn btn-secondary btn-sm" type="submit">
                         Create Snack
                     </LoginButton7>
                 </Form>

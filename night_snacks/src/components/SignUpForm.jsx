@@ -144,7 +144,7 @@ export default function SignUpForm() {
                     </Row>
                     <br></br>
                     <br></br>
-                    <LoginButton7 className="btn btn-secondary btn-sm" variant="primary" type="submit">
+                    <LoginButton7 className="btn btn-secondary btn-sm" type="submit">
                         Create User
                     </LoginButton7>
 

@@ -24,19 +24,21 @@ import { LoginWrapper } from './styles/loginElements'
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
   return (
-    <LoginWrapper>
-      <>
-
-
-        <Reset />
+    <>
+      <Reset />
+      <LoginWrapper>
         <div className='app'>
           <Router>
             <div className="nav">
               <NavBar />
             </div>
+
             <main>
               <Routes>
-                <Route path="/login" element={
+
+                {/* public route login */}
+                <Route path="/login"
+                  element={
                     <PublicRoute
                       element={Login}
                       currentUser={currentUser}
@@ -44,35 +46,111 @@ function App() {
                     />
                   }
                 />
-                <Route path="/" element={<Navigate to="/login" />}></Route>
-                
-                <Route path="/" element={<Home />} />
-                <Route path="/snacks" element={<Index />} />
-                <Route path="/snacks/new" element={<New />} />
-                <Route path="/snacks/:resource_id" element={<Show />} />
-                <Route path="/snacks/:resource_id/edit" element={<Edit />} />
+                {/* public route - if sent to home => redirect to login */}
+                <Route path="/" element={<Navigate to="/login" />} />
 
+                {/* public route - sign up */}
+                <Route path="/signup"
+                  element={
+                    <PublicRoute
+                      element={SignUp}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
 
-                {/* PUBLIC ROUTE FOR LOGIN */}
-                <Route path="/login" element={<Login />} />
+                {/* private route - user info */}
+                <Route
+                  path="/users/:user_id/profile"
+                  element={
+                    <ProtectedRoute
+                      element={UserPortal}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
 
-                {/* PUBLIC ROUTE SIGNUP */}
-                <Route path="/signup" element={<SignUp />} />
+                {/* private route - home screen of specific user */}
+                <Route
+                  path="/home"
+                  element={
+                    <ProtectedRoute
+                      element={Home}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
 
+                {/* private route - list all data */}
+                <Route
+                  path="/snacks"
+                  element={
+                    <ProtectedRoute
+                      element={Index}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
 
-                {/* ROUTE FOR "/" WITH REDIRECT TO LOGIN ROUTE */}
+                {/* private route - create 1 new data element belonging to user */}
+                <Route
+                  path="/snacks/new"
+                  element={
+                    <ProtectedRoute
+                      element={New}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
 
-                {/* ROUTE TO USER PROFILE ROUTE WITH WILDCARD MATCHER */}
-                <Route path="/users/:user_id" element={<UserPortal />} />
+                {/* private route - list 1 data element */}
+                <Route
+                  path="/snacks/:resource_id"
+                  element={
+                    <ProtectedRoute
+                      element={Show}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
 
+                {/* private route - edit 1 data element */}
+                <Route
+                  path="/snacks/:resource_id/edit"
+                  element={
+                    <ProtectedRoute
+                      element={Edit}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
 
-                <Route path="*" element={<FourOFour />} />
+                {/* public route - page not found */}
+                <Route
+                  path="*"
+                  element={
+                    <PublicRoute
+                      element={FourOFour}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
+
               </Routes>
             </main>
           </Router>
+
         </div>
-      </>
-    </LoginWrapper>
+      </LoginWrapper>
+    </>
   )
 }
 
