@@ -1,8 +1,31 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Night Snacks
+Elevate Your Nights with Delectable Delights, Your Guide to Savory Surprises After Sunset.
+        
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+## Deployed App Access
+
+The Deployed app (netlify) can be accessed here: [Night Snacks](https://main--spectacular-palmier-bc8125.netlify.app)
+
+The server can be accessed at: [Server](https://night-snacks.onrender.com)
+
+
+## GitHub Repositories
+
+The gibHub repositories can be accessed here:
+
+[FrontEnd](https://github.com/jorammercado/timeless-artists-hub-app)
+
+[BackEnd](https://github.com/jorammercado/timeless-artists-hub-server)
+
+Raw data to sql helper repo:
+
+[json-to-sql](https://github.com/jorammercado/timeless-artists-hub-sql-init)
+
+
+## Known Issues
+
+Since the database is relatively large, it may take several seconds to load all the artwork from the server, give it several seconds.
