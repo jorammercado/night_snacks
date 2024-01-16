@@ -1,31 +1,32 @@
 
 # Night Snacks
 Elevate Your Nights with Delectable Delights, Your Guide to Savory Surprises After Sunset.
-        
-
-
-
 
 ## Deployed App Access
 
-The Deployed app (netlify) can be accessed here: [Night Snacks](https://main--spectacular-palmier-bc8125.netlify.app)
+The deployed frontend app (netlify) can be accessed here: [Night Snacks](https://main--spectacular-palmier-bc8125.netlify.app)
 
-The server can be accessed at: [Server](https://night-snacks.onrender.com)
+The Server backend: [Server](https://night-snacks.onrender.com)
 
 
 ## GitHub Repositories
 
 The gibHub repositories can be accessed here:
 
-[FrontEnd](https://github.com/jorammercado/timeless-artists-hub-app)
+[FrontEnd](https://github.com/jorammercado/night_snacks)
 
-[BackEnd](https://github.com/jorammercado/timeless-artists-hub-server)
+[BackEnd](https://github.com/jorammercado/night_snacks_server)
 
-Raw data to sql helper repo:
+## Local backend build & deployment 
 
-[json-to-sql](https://github.com/jorammercado/timeless-artists-hub-sql-init)
+```
+```
 
+## Local frontend build & deployment 
 
-## Known Issues
+```
+cd night_snacks
+npm i react-router-dom react-bootstrap bootstrap
+npm run dev
+```
 
-Since the database is relatively large, it may take several seconds to load all the artwork from the server, give it several seconds.
