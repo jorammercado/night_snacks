@@ -10,8 +10,12 @@ import {
 } from '../styles/loginElements'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom"
 const VITE_API_URL = import.meta.env.VITE_API_URL
+
+
 const Login = ({ setCurrentUser }) => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
@@ -65,8 +69,8 @@ const Login = ({ setCurrentUser }) => {
     })
       .then(res => {
         console.log(res, " response")
-        setCurrentUser(res.data.username)
-
+        setCurrentUser(res.data.oneUser)
+        navigate("/users/:user_id/profile")
       })
       .catch(err => {
         console.error(err)
