@@ -51,7 +51,7 @@ export const WelcomeUser = styled.h2`
   }
 `;
 
-export const Logout = styled.h2`
+export const Logout = styled.button`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
