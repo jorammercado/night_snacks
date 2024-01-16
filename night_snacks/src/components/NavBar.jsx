@@ -17,8 +17,7 @@ export default function NavBar() {
 
                         <Link to="/signup"> Sign Up </Link>
 
-                        {/* testing */}
-                        <Link to="/users"> User </Link>
+                        <Link to="/users/:user_id/profile"> User </Link>
 
                     </div>
                     <span className="navbar-text">

@@ -2,9 +2,8 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     overflow: hidden;
-    background-color: #3a4664;
     position: fixed;
-    top: 0;
+    top: -4px;
     width: 100%;
     left: 0;
 }
