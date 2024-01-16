@@ -15,14 +15,15 @@ import {
 } from '../styles/loginElements';
 const API = import.meta.env.VITE_API_URL
 
-export default function SignUpForm() {
+export default function SignUpForm({ setCurrentUser }) {
     const [user, setUser] = useState({
+        user_id: 0,
         firstname: "",
         lastname: "",
         username: "",
         email: "",
-        password_hash: "",
-        is_favorite: false
+        password: "",
+        registration_date: ""
     })
     const navigate = useNavigate()
 
@@ -44,7 +45,9 @@ export default function SignUpForm() {
                 }
                 else {
                     alert(`User ${data.username} succesfully created`)
-                    navigate(`/users/${data.user_id}`)
+                    setUser(data)
+                    setCurrentUser(data)
+                    navigate(`/users/${data.user_id}/profile`)
                 }
             })
             .catch((error) => {
@@ -130,14 +133,14 @@ export default function SignUpForm() {
                         </Form.Group>
                     </Row>
                     <Row className="mb-3">
-                        <Form.Group as={Col} controlId="password_hash">
+                        <Form.Group as={Col} controlId="password">
                             <LoginHeaderV2>Password</LoginHeaderV2>
                             <Form.Control
                                 className="useLoginStyle"
-                                name="password_hash"
+                                name="password"
                                 type="text"
                                 placeholder="password"
-                                value={user.password_hash}
+                                value={user.password}
                                 onChange={handleInputChange}
                             />
                         </Form.Group>

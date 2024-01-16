@@ -1,10 +1,10 @@
 
 import SignUpForm from "../components/SignUpForm"
 
-function SignUp() {
+function SignUp({ setCurrentUser }) {
     return (
         <div >
-            <SignUpForm />
+            <SignUpForm setCurrentUser={setCurrentUser} />
         </div>
     )
 }
