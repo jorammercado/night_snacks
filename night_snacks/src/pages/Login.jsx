@@ -5,6 +5,7 @@ import {
   LoginHeader,
   LoginLabel,
   ErrorList,
+  ErrorList2,
   FormInput,
   LoginButton
 } from '../styles/loginElements'
@@ -61,46 +62,51 @@ const Login = ({ setCurrentUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    processRequest()
-    console.log(email, password, " this is what we are sending")
+    processLoginErrors()
     axios.post(`${VITE_API_URL}/users/login`, {
       email,
       password
     })
       .then(res => {
-        console.log(res, " response")
         setCurrentUser(res.data.oneUser)
+        setErrors([])
         navigate("/users/:user_id/profile")
       })
       .catch(err => {
-        console.error(err)
-        // need to establish what errors that are fired back look like
-        // setErrors([err])
+        alert(err.response.data.error)
+        console.error(err.response.data.error)
+        setErrors([])
+        setEmail("")
+        setPassword("")
       })
-    //   await dispatch({type: actions.LOGIN})
-
   }
 
-  const processRequest = () => {
-
-
+  const processLoginErrors = () => {
+    setErrors([...errors, ...validatesPassword(), ...validatesEmail()])
   }
 
   return (
     <LoginWrapper>
       <LoginBackground onSubmit={handleSubmit}>
-        <LoginLabel>
-          <LoginHeader>Login to Your Account</LoginHeader>
-          <ErrorList>
-            <li>{errors.length ? 'Oops, there was an issue signing in:' : null}</li>
-            {errors.length ? errors.map((error, i) => <li key={`error-${i}`}>&bull&nbsp{error}</li>) : null}
-          </ErrorList>
-        </LoginLabel>
-        <FormInput type="text" onChange={e => setEmail(e.currentTarget.value)} placeholder="Email" />
-        <FormInput type="password" onChange={e => setPassword(e.currentTarget.value)} placeholder="Password" />
-        <LoginButton >{'Sign In'}</LoginButton>
+        {
+          !errors.length ?
+            <>
+              <LoginLabel>
+                <LoginHeader>{!errors.length ? `Login to Your Account` : null}</LoginHeader>
+                <ErrorList>
+                  <li>{null}</li>
+                </ErrorList>
+              </LoginLabel>
+              <FormInput type="text" onChange={e => setEmail(e.currentTarget.value)} placeholder="Email" />
+              <FormInput type="password" onChange={e => setPassword(e.currentTarget.value)} placeholder="Password" />
+              <LoginButton >{'Sign In'}</LoginButton>
+            </> :
+            <ErrorList2>
+              {errors.length ? errors.map((error, i) => <li key={`error-${i}`}>&bull;&nbsp;{error}</li>) : null}
+            </ErrorList2>
+        }
       </LoginBackground>
-    </LoginWrapper>
+    </LoginWrapper >
   )
 }
 

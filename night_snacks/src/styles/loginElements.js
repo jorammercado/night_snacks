@@ -16,7 +16,7 @@ export const LoginBackground = styled.form`
   position: absolute;
   width: 460px;
   height: 400px;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #3a4664;
@@ -153,7 +153,6 @@ export const LoginHeader = styled.h2`
     text-align: center;
     color: #FFFFFF;
   }
-
 `
 
 export const LoginHeaderV3 = styled.h2`
@@ -224,7 +223,7 @@ export const ErrorList = styled.ul`
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 22px;
   line-height: 15px;
   margin-bottom: 15px;
   color: #000000;
@@ -247,7 +246,25 @@ export const ErrorList = styled.ul`
       font-weight: 500;
       margin-bottom: 7px;
     }
-    
+  }
+`
+
+export const ErrorList2 = styled.ul`
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 30px;
+  text-align: center;
+  color: #f2f2f2;
+  width:300px;
+
+  @media screen and (max-width: 480px) {
+    width: 299px;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
   }
 `
 
