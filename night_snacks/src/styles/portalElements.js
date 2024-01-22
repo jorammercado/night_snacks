@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const ProfileWrapper = styled.div`
   display: flex;
@@ -8,18 +8,19 @@ export const ProfileWrapper = styled.div`
   @media screen and (max-width: 480px) {
     flex-direction: column;
   }
-`;
+`
 
 export const SideRail = styled.div`
   width: 30px;
-  height: 100%;
+  height: 114.5vh;
+  margin-top: -4px;
   background: #FF5B90;
 
   @media screen and (max-width: 480px) {
     height: 20px;
     width: 100%;
   }
-`;
+`
 
 export const ProfileMain = styled.div`
   width: 100%;
@@ -33,14 +34,16 @@ export const ProfileMain = styled.div`
     flex-direction: column;
     padding: 0 30px;
   }
-`;
+`
 
 export const WelcomeUser = styled.h2`
-  font-family: Roboto;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
   line-height: 35px;
+  
+  color: white;
 
   @media screen and (max-width: 480px) {
     width: 100%;
@@ -49,22 +52,22 @@ export const WelcomeUser = styled.h2`
     text-align: center;
     margin-bottom: 2vh;
   }
-`;
+`
 
 export const Logout = styled.button`
-  font-family: Roboto;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
   color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
-`;
+`
 
 export const ProfileNav = styled.div`
   width: 100%;
   box-sizing: border-box;
-  padding: 54px 60px 54px 30px;
+  padding: 54px 60px 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,7 +78,7 @@ export const ProfileNav = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-`;
+`
 
 export const InfoWrapper = styled.div`
     position:absolute; 
@@ -102,7 +105,7 @@ export const InfoWrapper = styled.div`
     height: 100%;
     padding:0;
   }
-`;
+`
 
 export const ContactWrapper = styled.div`
 
@@ -124,19 +127,19 @@ export const ContactWrapper = styled.div`
     padding: 0;
     margin:0;
   }
-`;
+`
 
 export const ContactSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-sizing:border-box;
-`;
+`
 
 export const ContactItem = styled.div`
-  font-family: Roboto;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: normal;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 19px;
   color: #000000;
 
@@ -145,7 +148,12 @@ export const ContactItem = styled.div`
     text-align:left;
    }
   
-`;
+`
+
+export const ContactItem2 = styled.div`
+  margin-top: -40px;
+  margin-left: -100px;
+`
 
 export const ContactDescription = styled.span`
   font-weight: bold;
@@ -154,7 +162,7 @@ export const ContactDescription = styled.span`
     display:table;
     margin-bottom: 1vh;
   }
-`;
+`
 
 export const Divider = styled.div`
   @media screen and (max-width: 768px) {
@@ -163,22 +171,23 @@ export const Divider = styled.div`
     margin: 0 6vw;
     width: 100%;
   }
-`;
+`
 
 export const AboutWrapper = styled.div`
   min-width: 90%;
   @media screen and (max-width: 768px) {
     margin-top: 3vh;
   }
-`;
+`
 
 export const AboutHeader = styled.h3`
-  font-family: Roboto;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
   color: #000000;
+  margin-top: 40px;
   margin-bottom: 10px;
   text-align:left;
   @media screen and (max-width: 480px) {
@@ -186,7 +195,7 @@ export const AboutHeader = styled.h3`
     line-height: 19px;
     margin-bottom: 3vh;
   }
-`;
+`
 
 export const AboutContent = styled.p`
   max-width: 737px;
@@ -198,6 +207,30 @@ export const AboutContent = styled.p`
   line-height: 19px;
   color: #000000;
   text-align:left;
+`
 
+export const LoginButton2 = styled.button`
+  width: 150px;
+  height: 50px;
+  background: #FF5B90;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #FFFFFF;
+  cursor: pointer;
 
-`;
+  &:focus{
+      outline: none;
+  }
+`
+
+export const ProfileNavBottom = styled.div`
+  margin-top: -25px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  `

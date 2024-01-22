@@ -60,6 +60,18 @@ function App() {
                   }
                 />
 
+                {/* private route - user info edit */}
+                <Route
+                  path="/users/:user_id/profile/edit"
+                  element={
+                    <ProtectedRoute
+                      element={UserPortal}
+                      currentUser={currentUser}
+                      setCurrentUser={setCurrentUser}
+                    />
+                  }
+                />
+
                 {/* private route - user info */}
                 <Route
                   path="/users/:user_id/profile"
