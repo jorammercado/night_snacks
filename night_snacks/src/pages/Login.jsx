@@ -70,11 +70,11 @@ const Login = ({ setCurrentUser }) => {
       .then(res => {
         setCurrentUser(res.data.oneUser)
         setErrors([])
-        navigate("/users/:user_id/profile")
+        navigate(`/users/${res.data.oneUser.user_id}/profile`)
       })
       .catch(err => {
         alert(err.response.data.error)
-        console.log(err.response.data.error)
+        console.error(err.response.data.error)
         setErrors([])
         setEmail("")
         setPassword("")
