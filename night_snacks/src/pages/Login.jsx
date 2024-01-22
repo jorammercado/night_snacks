@@ -74,7 +74,7 @@ const Login = ({ setCurrentUser }) => {
       })
       .catch(err => {
         alert(err.response.data.error)
-        console.error(err.response.data.error)
+        console.log(err.response.data.error)
         setErrors([])
         setEmail("")
         setPassword("")
