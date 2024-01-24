@@ -7,7 +7,8 @@ import {
   ErrorList,
   ErrorList2,
   FormInput,
-  LoginButton
+  LoginButton,
+  OkButton
 } from '../styles/loginElements'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
@@ -62,7 +63,6 @@ const Login = ({ setCurrentUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    processLoginErrors()
     axios.post(`${VITE_API_URL}/users/login`, {
       email,
       password
@@ -73,16 +73,21 @@ const Login = ({ setCurrentUser }) => {
         navigate(`/users/${res.data.oneUser.user_id}/profile`)
       })
       .catch(err => {
-        alert(err.response.data.error)
         console.error(err.response.data.error)
-        setErrors([])
-        setEmail("")
-        setPassword("")
+        processLoginErrors(err.response.data.error)
       })
   }
 
-  const processLoginErrors = () => {
-    setErrors([...errors, ...validatesPassword(), ...validatesEmail()])
+  const processLoginErrors = (serverRes) => {
+    if (!serverRes)
+      setErrors([...validatesPassword(), ...validatesEmail()])
+    else
+      setErrors([...validatesPassword(), ...validatesEmail(), `server: ${serverRes}`])
+  }
+
+  const handleOk = async (event) => {
+    event.preventDefault()
+    setErrors([])
   }
 
   return (
@@ -101,9 +106,14 @@ const Login = ({ setCurrentUser }) => {
               <FormInput type="password" onChange={e => setPassword(e.currentTarget.value)} placeholder="Password" />
               <LoginButton >{'Sign In'}</LoginButton>
             </> :
-            <ErrorList2>
-              {errors.length ? errors.map((error, i) => <li key={`error-${i}`}>&bull;&nbsp;{error}</li>) : null}
-            </ErrorList2>
+            <>
+              <ErrorList2>
+                {errors.length ? errors.map((error, i) => <li key={`error-${i}`}>&bull;&nbsp;{error}</li>) : null}
+              </ErrorList2>
+              <OkButton onSubmit={handleOk}>
+                OK
+              </OkButton>
+            </>
         }
       </LoginBackground>
     </LoginWrapper >
