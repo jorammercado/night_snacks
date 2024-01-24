@@ -85,8 +85,10 @@ const Login = ({ setCurrentUser }) => {
       setErrors([...validatesPassword(), ...validatesEmail(), `server: ${serverRes}`])
   }
 
-  const handleOk = async (event) => {
+  const handleOk = (event) => {
     event.preventDefault()
+    setEmail("")
+    setPassword("")
     setErrors([])
   }
 
@@ -110,7 +112,7 @@ const Login = ({ setCurrentUser }) => {
               <ErrorList2>
                 {errors.length ? errors.map((error, i) => <li key={`error-${i}`}>&bull;&nbsp;{error}</li>) : null}
               </ErrorList2>
-              <OkButton onSubmit={handleOk}>
+              <OkButton onClick={handleOk}>
                 OK
               </OkButton>
             </>
