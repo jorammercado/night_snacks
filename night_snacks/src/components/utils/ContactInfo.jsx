@@ -15,14 +15,26 @@ import {
 import profile from "../../assets/profile.svg"
 import { useNavigate, Link } from "react-router-dom"
 import "./ContactInfo.css"
-const ContactInfo = ({ currentUser }) => {
+const API = import.meta.env.VITE_API_URL
+
+const ContactInfo = ({ currentUser, setCurrentUser }) => {
     const navigate = useNavigate()
 
-    const handleDelete = () => {
+    const handleDelete = async () => {
         const httpOptions = { method: "DELETE" }
         fetch(`${API}/users/${currentUser.user_id}`, httpOptions)
-            .then(() => navigate("/login"))
-            .catch((error) => console.log(error))
+            .then((res) => res.json())
+            .then( data => { 
+                if(data.error)
+                    throw new Error(data.error)
+                else if(data.err)
+                    throw new Error(data.err)
+                else{
+                    setCurrentUser(null)
+                    navigate("/login")
+                }
+            })
+            .catch((error) => console.error(error))
     }
 
     return (

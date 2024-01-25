@@ -20,7 +20,7 @@ function UserPortal({ currentUser, setCurrentUser }) {
                     <WelcomeUser>Welcome back, {currentUser.firstname}!</WelcomeUser>
                     <LoginButton2 onClick={() => { setCurrentUser(null) }}>logout</LoginButton2>
                 </ProfileNav>
-                <ContactInfo currentUser={currentUser} />
+                <ContactInfo currentUser={currentUser} setCurrentUser={setCurrentUser} />
             </ProfileMain>
         </ProfileWrapper>
     )
